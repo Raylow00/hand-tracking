@@ -14,6 +14,8 @@ class HandDetector():
         self.hands = self.mpHands.Hands(static_image_mode=self.mode, max_num_hands=self.maxHands, min_detection_confidence=self.detectionCon, min_tracking_confidence=self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
 
+        self.fingerTipIDs = [4, 8, 12, 16, 20]
+
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
@@ -39,6 +41,24 @@ class HandDetector():
 
         return lmlist
 
+    def fingersUp(self):
+        fingers = []
+
+        # get the thumb
+        if self.lmlist[self.fingerTipIDs[0]][1] < self.lmlist[self.fingerTipIDs[0] - 1][1]:
+            fingers.append(1)
+        else:
+            fingers.append(0)
+
+        # get all 4 other fingers
+        for id in range(1, 5):
+            if self.lmlist[self.fingerTipIDs[id]][2] < self.lmlist[self.fingerTipIDs[id] - 2][2]:
+                fingers.append(1)
+            else:
+                fingers.append(0)
+
+        return fingers
+
 def main():
     pTime = 0
     cTime = 0
@@ -49,13 +69,6 @@ def main():
         success, img = cap.read()
         img = detector.findHands(img)
         lmlist = detector.findPosition(img)
-        if len(lmlist) != 0:
-            index_x = lmlist[8][0]
-            index_y = lmlist[8][1]
-            thumb_x = lmlist[4][0]
-            thumb_y = lmlist[4][1]
-            distance_index_thumb = math.sqrt(((index_x-thumb_x)**2)+((index_y-thumb_y)**2))
-            print("Distance: ", distance_index_thumb)
 
         cTime = time.time()
         fps = 1 / (cTime - pTime)
