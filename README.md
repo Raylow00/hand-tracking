@@ -7,7 +7,7 @@ As a starting point, there will be multiple scripts trying to accomplish differe
 Available scripts:
 - gesture_mousecursor.py: 
     - Description: This script attempts to take the user's fingers as input and calculates the distance between the index finger and thumb to perform a click. Currently, it is able to click and resize/close windows, or generally perform any clicks as if using a mouse. 
-    - Required fix: The mouse cursor is currently not in sync with the fingers positions accurately. The action of closing the index finger and thumb to indicate a click is also not smooth.
+    - Fixed: The mouse cursor is currently not in sync with the fingers positions accurately. The action of closing the index finger and thumb to indicate a click is also not smooth.
 
 - gesture_volumecontroller.py:
     - Description: This script attempts to take the user's fingers as input and calculates the distance between the index finger and thumb to control the volume of the speaker connected. Currently, it is able to slide the volume slider of the master speaker.
