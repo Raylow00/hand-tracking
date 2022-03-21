@@ -17,8 +17,7 @@ Available scripts:
 This challenge replicates the Dalgona Candy challenge in Squid Game, but by tracking the user's index finger to trace the carved symbols of the Dalgona candy. Using OpenCV and simple edge detection algorithms together with MediaPipe's hand-tracking feature, the player can challenge themselves to beat their own time in completing the challenge of tracing the shape outline. Currently, it has only the triangle shape.
 
 Command to run:
-
-python game.py
+- python game.py
 
 Future work:
 - To add multiplayer feature so your friends can draw a custom path for you to trace.
