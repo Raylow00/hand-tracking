@@ -133,7 +133,7 @@ def find_line_length(a, b, c, x1, y1, x2, y2):
     line_len = math.sqrt(((x2-x1)**2+(y2-y1)**2))
     return line_len
 
-# # Biscuit image to overlay
+# Biscuit image to overlay
 target_image_path = "images/triangle_biscuit.jpg"
 blank = prepare_target_image(target_image_path)
 

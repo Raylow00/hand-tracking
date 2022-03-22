@@ -13,7 +13,7 @@ Available scripts:
     - Description: This script attempts to take the user's fingers as input and calculates the distance between the index finger and thumb to control the volume of the speaker connected. Currently, it is able to slide the volume slider of the master speaker.
     - Required fix: The slider is not exactly smooth and the range of the distance does not correspond correctly to the range of volume available.
 
-## Squid Game Dalgona Candy Challenge
+## Squid Game Dalgona Candy Challenge (Cookie Cutter Challenge)
 This challenge replicates the Dalgona Candy challenge in Squid Game, but by tracking the user's index finger to trace the carved symbols of the Dalgona candy. Using OpenCV and simple edge detection algorithms together with MediaPipe's hand-tracking feature, the player can challenge themselves to beat their own time in completing the challenge of tracing the shape outline. Currently, it has only the triangle shape.
 
 Command to run:
